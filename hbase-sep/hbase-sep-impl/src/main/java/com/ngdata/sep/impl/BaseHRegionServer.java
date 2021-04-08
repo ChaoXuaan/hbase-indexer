@@ -15,12 +15,15 @@
  */
 package com.ngdata.sep.impl;
 
+import com.google.protobuf.Message;
 import com.google.protobuf.RpcController;
 import com.google.protobuf.ServiceException;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Server;
 import org.apache.hadoop.hbase.ServerName;
 import org.apache.hadoop.hbase.protobuf.generated.AdminProtos;
+import org.apache.hadoop.hbase.protobuf.generated.RPCProtos;
+import org.apache.hadoop.hbase.security.User;
 import org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher;
 
 /**
@@ -153,7 +156,7 @@ public class BaseHRegionServer implements AdminProtos.AdminService.BlockingInter
     }
 
     @Override
-    public int getPriority(org.apache.hadoop.hbase.protobuf.generated.RPCProtos.RequestHeader header, com.google.protobuf.Message param) {
+    public int getPriority(RPCProtos.RequestHeader header, Message param, User user) {
         return org.apache.hadoop.hbase.HConstants.NORMAL_QOS;
     }
 
