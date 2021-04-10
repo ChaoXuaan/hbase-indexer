@@ -64,7 +64,6 @@
   </scm>
 
   <modules>
-    <!--
     <module>hbase-indexer-server</module>
     <module>hbase-indexer-common</module>
     <module>hbase-indexer-model</module>
@@ -75,7 +74,6 @@
     <module>hbase-indexer-demo</module>
     <module>hbase-indexer-mr</module>
     <module>hbase-indexer-dist</module>
-    -->
     <module>hbase-sep</module>
   </modules>
 
